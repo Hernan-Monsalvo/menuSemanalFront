@@ -66,7 +66,7 @@
                  <h3>Almuerzo</h3> 
                  <h3>Cena</h3> 
                  </div>
-                 <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                 <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Sábado</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="sabado_almuerzo">
                         <option value="">no</option>
@@ -81,7 +81,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                 <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                 <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Domingo</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="domingo_almuerzo">
                         <option value="no">no</option>
@@ -96,7 +96,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Lunes</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="lunes_almuerzo">
                         <option value="no" selected>no</option>
@@ -111,7 +111,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Martes</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="martes_almuerzo">
                         <option value="no" selected>no</option>
@@ -126,7 +126,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Miércoles</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="miercoles_almuerzo">
                         <option value="no" selected>no</option>
@@ -141,7 +141,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Jueves</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="jueves_almuerzo">
                         <option value="no" selected>no</option>
@@ -156,7 +156,7 @@
                         <option value="del">Delivery</option>
                       </select> 
                 </div>
-                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2">
+                <div class="d-flex flex-row flex-md-column justify-content-between  me-2 mb-2 text-md-center">
                     <h4>Viernes</h4> 
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="viernes_almuerzo">
                         <option value="no" selected>no</option>
@@ -175,7 +175,7 @@
                 </div>
           
 
-            <button type="submit" class="btn btn-primary">Aceptar</button>
+            <button type="submit" class="btn btn-primary" id="submit">Aceptar</button>
           </form>
         </div>
         <div class="container mt-3" id="resultadoCont">
@@ -190,21 +190,69 @@
     </main>
     <!-- fin de main -->
 
-    <!-- footer -->
-
-    <footer id="footer" class="pb-4 pt-4">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-12 col-lg"><a href="#">Preguntas frecuentes</a></div>
-          <div class="col-12 col-lg"><a href="#">Contactanos</a></div>
-          <div class="col-12 col-lg"><a href="#">El Creador</a></div>
-        </div>
-      </div>
-    </footer>
+    <!-- footer --->
     <div id="copy" class="container-fluid bg-dark text-center text-white">
       Copyright © 2021 - Hernan Monsalvo. Todos los derechos reservados
     </div>
     <!-- fin de footer -->
+    <!-- Modal edicion-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cambiar Plato</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="cambio" id="selectEditar">
+
+            </select> 
+          </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-primary" onclick="cambiarPlato()" data-bs-dismiss="modal">Cambiar</button>
+        </div>
+      </div>
+      </div>
+    </div>
+    <!-- fin de modal -->
+    <!-- Modal confirmacion-->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModal1Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModal1Label">Cambiar Plato</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <label for="mes" class="mt-2">Mes</label>
+                <select class="form-select form-select-sm mt-2" aria-label=".form-select-sm example" name="mes" id="mes">
+                  <option value="">Enero</option>
+                  <option value="">Febrero</option>
+                  <option value="">Marzo</option>
+                  <option value="">Abril</option>
+                  <option value="">Mayo</option>
+                  <option value="">Junio</option>
+                  <option value="">Julio</option>
+                  <option value="">Agosto</option>
+                  <option value="">Septiembre</option>
+                  <option value="">Octubre</option>
+                  <option value="">Noviembre</option>
+                  <option value="">Diciembre</option>
+                </select> 
+                <label for="semana" class="mt-2">Semana</label>
+                <input type="number" min="1" max="5" class="form-control mt-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="semana">
+                <label for="nombre" class="mt-2">Tu nombre</label>
+                <input type="text" class="form-control mt-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" id="nombre">
+              </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="enviarMenu()" data-bs-dismiss="modal">Cambiar</button>
+            </div>
+          </div>
+          </div>
+     </div>
+     <!-- fin de modal -->
 
     <!-- Optional JavaScript; choose one of the two! -->
 
