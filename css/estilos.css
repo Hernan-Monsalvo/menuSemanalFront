@@ -1,0 +1,191 @@
+.text-hm {
+  color: #FFFFFF;
+  background: #232323;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+#navbar img {
+  width: 40px;
+}
+
+#navbar .navbar-brand{
+  color: #FFFFFF;
+background: #232323;
+text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+}
+
+/* Fin navbar */
+
+/* main */
+/* carrousel */
+
+#main .carousel-inner img {
+  max-height: 75vh;
+  object-fit: cover; /* para que la imagen no se deforme, solo se recortan los bordes */
+  filter: grayscale(50%);
+}
+#carouselExampleIndicators {
+  position: relative;
+}
+
+#carouselExampleIndicators .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+
+}
+
+#carouselExampleIndicators .overlay h5,
+#carouselExampleIndicators .overlay h1{
+    text-shadow: 1px 1px 1px #000000;
+}
+
+
+#carouselExampleIndicators .overlay .container,
+#carouselExampleIndicators .overlay .row {
+  height: 100%;
+}
+/* Fin de carrousel */
+/* Fin de main */
+/* Funcionalidad */
+#funcionalidad .card img {
+  filter: grayscale(20%);
+  height: 215px;
+  object-fit: cover;
+}
+
+/* Fin de funcionalidad */
+
+/* Footer */
+#footer {
+  background: #0d6efd;
+}
+
+#footer a {
+  color: white;
+}
+/* Fin Footer */
+
+/* --menu-- */
+
+#menu {
+  min-height: 100vh;
+  position: relative;
+}
+
+#menu h4 {
+  min-width: 100px;
+}
+
+#menuForm select {
+  min-width: 80px;
+  max-width: 100px;
+  margin: 2px;
+}
+
+#menu #footer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
+#menu #copy {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#resultadoMenu {
+  margin-bottom: 0px;
+  min-height: 170px;
+}
+
+
+#generarMenuCont,
+#resultadoCont,
+#listaCont{
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px gray;
+}
+
+#resultadoCont,
+#listaCont {
+  margin-bottom: 40px;
+}
+
+#resultadoMenu h6 {
+  width: 100px;
+  height: 40px;
+  margin: 2px;
+}
+
+#resultadoMenu .diaMenu {
+  box-shadow: 0px 0px 5px 1px gray;
+  border-radius: 5px;
+  min-height: 60px;
+  overflow: hidden;
+}
+
+
+#slider{
+  margin-top: 15px;
+  width: 95%;
+}
+
+.diaBordeado{
+  border: 2px solid #3FB8AF;
+}
+.sinBorde{
+  border: 2px solid transparent;
+}
+
+.pipNormal{
+  text-shadow: 0;
+}
+
+.pipResaltado{
+  text-shadow: 0px 0px 2px blue;
+  color: #0d6efd;
+}
+
+/* --fin menu-- */
+/* --lista de compras-- */
+.negocioLista{
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.negocioLista input{
+  margin-right: 5px;
+}
+
+
+
+/* --fin lista de compras-- */
+.card {
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: 0px 10px 15px grey;
+  transform: translate(0, -8px);
+}
+
+/* Media querys */
+@media (min-width: 768px) {
+  #resultadoMenu .diaMenu {
+
+    min-height: 220px;
+  }
+}

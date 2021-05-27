@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="img/icon-comida-real.png"
+      type="image/x-icon"
+    />
+    <link href="css/nouislider.css" rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+    <!-- mi CSS -->
+    <link rel="stylesheet" href="css/estilos.css" />
+
+    <title>Tu menú</title>
+  </head>
+  <body id="menu">
+    <!-- navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid mx-4">
+        <a class="navbar-brand" href="#"
+          ><img src="img/icon-comida-real.png" alt="comida icono" /> Menú
+          Semanal</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- me-auto margen izq - ms-auto margen derecho -->
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link disabled"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                >Registrate</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- fin de navbar -->
+    <!-- main -->
+    <main>
+      <!-- contenedor del menu -->
+      <div class="container mt-3 p-2" id="resultadoCont">
+        <div id="tituloMenu"></div>
+        <div
+          class="d-flex flex-column flex-md-row justify-content-between"
+          id="resultadoMenu"
+        >
+          <h2>Aqui aparecera tu menu</h2>
+        </div>
+        <div class="d-flex flex-row" id="resultadoBTN">
+          <div class="d-flex flex-row justify-content-around me-2 mb-2" p-2>
+            <button
+              class="btn btn-primary me-2"
+              id="btn-editar"
+              onclick="listaCompra()"
+            >
+              Lista de compra
+            </button>
+          </div>
+          <div id="slider"></div>
+        </div>
+      </div>
+      <!-- fin de contenedor menu -->
+      <div class="container mt-3 p-2" id="listaCont">
+        <div id="tituloLista"></div>
+        <div
+          class="d-flex flex-column flex-md-row justify-content-around"
+          id="resultadoLista"
+        >
+          <h2>Aqui aparecera tu lista de compras</h2>
+        </div>
+        <div class="d-flex flex-row" id="resultadoBTN"></div>
+      </div>
+      <!-- contenedor lista -->
+
+      <!-- fin de contenedor lista -->
+    </main>
+    <!-- fin de main -->
+    <!-- Modal agregar producto-->
+    <div
+      class="modal fade"
+      id="exampleModal2"
+      tabindex="-1"
+      aria-labelledby="exampleModal2Label"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModal2Label">
+              Agregar Producto
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h4>Que producto quieres agregar?</h4>
+
+            <label for="producto" class="mt-2">Producto</label>
+            <input
+              type="text"
+              class="form-control mt-2"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              id="producto"
+            />
+
+            <label for="selectAgregar" class="mt-2">Lista</label>
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              name="agregar"
+              id="selectAgregar"
+            ></select>
+
+            <label for="cantidad" class="mt-2">Cantidad</label>
+            <input
+              type="number"
+              step="0.1"
+              class="form-control mt-2"
+              aria-label="Small"
+              aria-describedby="inputGroup-sizing-sm"
+              id="cantidad"
+            />
+
+            <label for="unidad" class="mt-2">Unidad</label>
+            <select
+              class="form-select form-select-sm"
+              aria-label=".form-select-sm example"
+              name="agregar"
+              id="unidad"
+            >
+              <option value="kg" selected>Kilogramo</option>
+              <option value="un">Unidad</option>
+              <option value="lt">Litro</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="agregarProducto()"
+              data-bs-dismiss="modal"
+            >
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- fin de modal -->
+    <!-- footer --->
+    <div id="copy" class="container-fluid bg-dark text-center text-white">
+      Copyright © 2021 - Hernan Monsalvo. Todos los derechos reservados
+    </div>
+    <!-- fin de footer -->
+
+    <script src="js/nouislider.js"></script>
+    <script src="js/mainLista.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
