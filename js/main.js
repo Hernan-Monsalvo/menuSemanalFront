@@ -23,7 +23,7 @@ async function submitForm(e) {
 
   try {
     const formData = new FormData(form);
-
+    console.log(formData);
     const responseData = await postFormDataAsJson({ url, formData });
 
     let arr = responseData;
