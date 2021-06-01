@@ -16,7 +16,7 @@ const dias = [
   "Viernes",
 ];
 
-fetch("http://localhost:8080/menuSemanal/menu?id=" + id)
+fetch("https://menu-semanal.herokuapp.com/menuSemanal/menu?id=" + id)
   .then(function (res) {
     return res.json();
   })
@@ -212,7 +212,7 @@ function agregarProducto() {
 //imprimir pdf de menu
 function imprimirPdfMenu() {
   console.log("boton pdf");
-  fetch("http://localhost:8080/menuSemanal/menu?pdfid=" + id)
+  fetch("https://menu-semanal.herokuapp.com/menuSemanal/menu?pdfid=" + id)
   .then(async (res) => ({
     blob: await res.blob(),
   }))
@@ -275,7 +275,7 @@ let listaJson = {
 };
 
 //mandar objeto lista en post (fetch), recibir e imprimir PDF
-fetch("http://localhost:8080/menuSemanal/lista", {
+fetch("https://menu-semanal.herokuapp.com/menuSemanal/lista", {
   method: "POST",
   body: JSON.stringify(listaJson),
   headers: {
