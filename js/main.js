@@ -58,6 +58,7 @@ async function submitForm(e) {
 async function postFormDataAsJson({ url, formData }) {
   const plainFormData = Object.fromEntries(formData.entries());
   const formDataJsonString = JSON.stringify(plainFormData);
+  console.log(formDataJsonString);
   const fetchOptions = {
     method: "POST",
     headers: {
