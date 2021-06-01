@@ -133,7 +133,7 @@ function modalEditar(plato, pos) {
   ).innerHTML = `Cambiar ${plato} por:`;
 
   //fetch mando nombre del plato y me devuleve todos los platos del mismo tipo
-  fetch("http://localhost:8080/menuSemanal/plato?nombre=" + plato)
+  fetch("https://menu-semanal.herokuapp.com/menuSemanal/plato?nombre=" + plato)
     .then(function (res) {
       return res.json();
     })
@@ -192,7 +192,7 @@ function enviarMenu() {
   };
 
   //mandar todo a la api y guarda el menu (esto devuelve el id) y redirije a pag menu.
-  fetch("http://localhost:8080/menuSemanal/menu", {
+  fetch("https://menu-semanal.herokuapp.com/menuSemanal/menu", {
     method: "POST",
     body: JSON.stringify(json),
     headers: {
