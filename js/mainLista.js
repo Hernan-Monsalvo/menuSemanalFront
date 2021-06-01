@@ -71,7 +71,7 @@ function listaCompra() {
   console.log(diaFin);
 
   fetch(
-    `http://localhost:8080/menuSemanal/lista?id=${id}&diaIni=${diaIni}&diaFin=${diaFin}`
+    `https://menu-semanal.herokuapp.com/menuSemanal/lista?id=${id}&diaIni=${diaIni}&diaFin=${diaFin}`
   )
     .then(function (res) {
       return res.json();
