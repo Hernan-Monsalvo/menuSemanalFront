@@ -26,6 +26,7 @@ text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 3
 
 #main .carousel-inner img {
   max-height: 75vh;
+  min-height: 60vh;
   object-fit: cover; /* para que la imagen no se deforme, solo se recortan los bordes */
   filter: grayscale(50%);
 }
