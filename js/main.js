@@ -23,7 +23,7 @@ async function submitForm(e) {
 
   try {
     const formData = new FormData(form);
-
+    console.log(formData);
     const responseData = await postFormDataAsJson({ url, formData });
 
     let arr = responseData;
@@ -58,6 +58,7 @@ async function submitForm(e) {
 async function postFormDataAsJson({ url, formData }) {
   const plainFormData = Object.fromEntries(formData.entries());
   const formDataJsonString = JSON.stringify(plainFormData);
+  console.log(formDataJsonString);
   const fetchOptions = {
     method: "POST",
     headers: {
@@ -133,7 +134,7 @@ function modalEditar(plato, pos) {
   ).innerHTML = `Cambiar ${plato} por:`;
 
   //fetch mando nombre del plato y me devuleve todos los platos del mismo tipo
-  fetch("http://menu-semanal.herokuapp.com/menuSemanal/plato?nombre=" + plato)
+  fetch("https://menu-semanal.herokuapp.com/menuSemanal/plato?nombre=" + plato)
     .then(function (res) {
       return res.json();
     })
@@ -192,7 +193,7 @@ function enviarMenu() {
   };
 
   //mandar todo a la api y guarda el menu (esto devuelve el id) y redirije a pag menu.
-  fetch("http://menu-semanal.herokuapp.com/menuSemanal/menu", {
+  fetch("https://menu-semanal.herokuapp.com/menuSemanal/menu", {
     method: "POST",
     body: JSON.stringify(json),
     headers: {
